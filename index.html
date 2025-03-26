@@ -10,16 +10,17 @@
 
     <!-- HEADER -->
     <header>
-        <div class="welcome-text">Selamat Datang</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="pbw.html">PBW</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="welcome-text">Selamat Datang</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="pbw.html">PBW</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
 
     <!-- KONTEN UTAMA -->
     <main class="container">
@@ -85,6 +86,13 @@
             <button type="submit">Kirim</button>
         </form>
     </footer>
+
+    <script>
+    function toggleMenu() {
+        const nav = document.querySelector('.nav-links');
+        nav.classList.toggle('active');
+    }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
