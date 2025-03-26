@@ -4,14 +4,16 @@ body {
     padding: 0;
 }
 
-/* HEADER */
+/* Header */
 header {
     background: black;
-    padding: 15px 20px;
+    padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .welcome-text {
@@ -23,10 +25,10 @@ header {
 header nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
 }
 
 header nav ul li {
+    display: inline;
     margin: 0 15px;
 }
 
@@ -36,7 +38,81 @@ header nav ul li a {
     font-weight: bold;
 }
 
-/* MENU HAMBURGER */
+/* Container Utama */
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Profile */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.identity h2 {
+    margin-bottom: 5px;
+}
+
+.identity p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Overview */
+.overview {
+    margin-top: 20px;
+}
+
+/* Skills & Experience */
+.skills, .experience {
+    margin-top: 20px;
+}
+
+.skills ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+footer input, footer textarea {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+footer button {
+    background: white;
+    color: black;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Menu Hamburger (Hanya Muncul di HP) */
 .hamburger {
     display: none;
     font-size: 24px;
@@ -44,6 +120,7 @@ header nav ul li a {
     cursor: pointer;
 }
 
+/* Responsive Menu */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -68,121 +145,15 @@ header nav ul li a {
     .nav-links li {
         margin: 10px 0;
     }
-}
 
-/* CONTAINER UTAMA */
-.container {
-    width: 80%;
-    margin: 20px auto;
-}
-
-/* PROFIL */
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.profile-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.identity h2 {
-    margin-bottom: 5px;
-}
-
-.identity p {
-    margin: 0;
-    font-size: 14px;
-}
-
-/* FORM KONTAK */
-.contact-form {
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.contact-form h2 {
-    margin-bottom: 10px;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 80%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-}
-
-.contact-form button {
-    background: white;
-    color: black;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* FOOTER */
-footer {
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-footer form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-footer input,
-footer textarea {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-}
-
-footer button {
-    background: white;
-    color: black;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .contact-form input,
-    .contact-form textarea {
-        width: 90%;
-    }
-
+    /* Footer Responsif */
     footer form {
         flex-direction: column;
         align-items: center;
         gap: 5px;
     }
 
-    footer input, 
-    footer textarea {
+    footer input, footer textarea {
         width: 90%;
     }
 }
