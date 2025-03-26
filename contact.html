@@ -58,14 +58,29 @@
         nav.classList.toggle('active');
     }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("4MFU6l7zftX1Ittkx"); // Ganti dengan Public Key EmailJS
+        })();
     
-<script src="script.js"></script>
-<script src="htts://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-    (function(){
-        emailjs.init("4MFU6l7zftX1Ittkx");
-    })();
-</script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            emailjs.send("service_h6ii0rg", "template_xe8v18d", { // Ganti dengan ID yang benar
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value
+            })
+            .then(function(response) {
+                alert("Pesan berhasil dikirim!");
+            }, function(error) {
+                alert("Gagal mengirim pesan. Error: " + error.text);
+            });
+        });
+    </script>
 
 </body>
 </html>
