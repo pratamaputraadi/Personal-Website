@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- HEADER -->
     <header>
         <div class="welcome-text">Selamat Datang</div>
         <nav>
@@ -20,7 +21,9 @@
         </nav>
     </header>
 
+    <!-- KONTEN UTAMA -->
     <main class="container">
+        <!-- Foto & Identitas -->
         <section class="profile">
             <img src="Picture.png" alt="Foto Profil" class="profile-img">
             <div class="identity">
@@ -29,12 +32,23 @@
                 <p>Universitas Singaperbangsa Karawang</p>
             </div>
         </section>
-        
+
+        <!-- Overview -->
         <section class="overview">
             <h2>Overview</h2>
-            <p>Website ini adalah hasil karya Adi Pratama Putra...</p>
+            <p>
+                Website ini adalah hasil karya Adi Pratama Putra, seorang mahasiswa Semester 4 Informatika di Universitas Singaperbangsa Karawang. Dengan latar belakang pendidikan di SMK Trimitra jurusan Teknik Jaringan Komputer, Adi memiliki minat besar dalam dunia teknologi, khususnya di bidang networking dan pengembangan web. Website ini dirancang sebagai wadah untuk menampilkan portofolio serta perjalanan Adi dalam mengeksplorasi berbagai aspek dalam dunia IT.
+            </p>
+            <p>
+                Selain sebagai portofolio, website ini juga bertujuan untuk berbagi ilmu mengenai Pemrograman Web. Adi percaya bahwa berbagi pengetahuan adalah salah satu cara terbaik untuk terus berkembang. Oleh karena itu, melalui website ini, ia akan membagikan berbagai artikel, tutorial, serta tips dan trik seputar pengembangan web, mulai dari dasar hingga konsep yang lebih kompleks.
+            </p>
+            <p>
+                Dengan adanya website ini, Adi berharap dapat terhubung dengan sesama penggiat IT, baik itu mahasiswa, profesional, maupun siapa saja yang memiliki ketertarikan di bidang yang sama. Semoga website ini dapat menjadi sumber inspirasi dan referensi bagi siapa saja yang ingin belajar dan mengembangkan keterampilan di dunia pemrograman web serta teknologi informasi secara umum.
+            </p>
+            
         </section>
-        
+
+        <!-- Skills -->
         <section class="skills">
             <h2>Skills</h2>
             <ul>
@@ -43,13 +57,59 @@
                 <li>JavaScript</li>
                 <li>PHP</li>
                 <li>Figma</li>
+                <li>WinBox</li>
+                <li>VirtualBox</li>
             </ul>
+        </section>
+
+        <!-- Pengalaman -->
+        <section class="experience">
+            <h2>Pengalaman</h2>
+            <p>
+                Saya memiliki minat yang besar dalam bidang jaringan komputer, khususnya dalam memahami arsitektur, konfigurasi, serta keamanan jaringan. Saya tertarik untuk mengeksplorasi bagaimana infrastruktur jaringan dapat dioptimalkan agar lebih efisien dan aman. Selain itu, saya juga mempelajari berbagai teknologi terkait, seperti manajemen server, cloud computing, dan keamanan siber, untuk memperdalam pemahaman saya dalam dunia networking.
+            </p>
+            <p>
+                Selain jaringan komputer, saya juga memiliki ketertarikan dalam bidang UI/UX (User Interface dan User Experience). Saya senang mendalami bagaimana desain dan pengalaman pengguna dapat mempengaruhi interaksi seseorang dengan sebuah sistem atau aplikasi. Saya terus belajar tentang prinsip-prinsip desain antarmuka yang intuitif, penggunaan warna dan tipografi yang efektif, serta bagaimana menciptakan pengalaman yang nyaman bagi pengguna dalam aplikasi berbasis web maupun mobile.
+            </p>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <p>© 2025 Adi Pratama Putra. All Rights Reserved.</p>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Nama" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="subject" placeholder="Subjek" required>
+            <textarea id="message" placeholder="Pesan" required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("4MFU6l7zftX1Ittkx"); // Ganti dengan Public Key EmailJS
+        })();
+    
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            emailjs.send("service_h6ii0rg", "template_xe8v18d", { // Ganti dengan ID yang benar
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value
+            })
+            .then(function(response) {
+                alert("Pesan berhasil dikirim!");
+            }, function(error) {
+                alert("Gagal mengirim pesan. Error: " + error.text);
+            });
+        });
+    </script>
+    
+
 
 </body>
 </html>
