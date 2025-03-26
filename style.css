@@ -111,3 +111,38 @@ footer button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+/* Menu Hamburger (Hanya Muncul di HP) */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: black;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
