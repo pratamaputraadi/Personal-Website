@@ -1,120 +1,113 @@
-/* Reset dasar */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header */
 header {
-    background: #333;
-    color: white;
-    padding: 20px;
+    background: black;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .welcome-text {
-    font-size: 24px;
-    margin-bottom: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-/* Navigasi */
-nav ul {
+header nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    padding: 0;
 }
 
-nav ul li {
-    margin: 5px;
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
 
-nav ul li a {
+header nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 8px 15px;
-    background: #555;
-    border-radius: 5px;
+    font-weight: bold;
 }
 
-nav ul li a:hover {
-    background: #777;
-}
-
-/* Container */
+/* Container Utama */
 .container {
-    width: 90%;
-    max-width: 1000px;
+    width: 80%;
     margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Profile */
 .profile {
-    text-align: center;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .profile-img {
-    width: 150px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
 .identity h2 {
-    font-size: 22px;
-    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
-/* Skills */
+.identity p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Overview */
+.overview {
+    margin-top: 20px;
+}
+
+/* Skills & Experience */
+.skills, .experience {
+    margin-top: 20px;
+}
+
 .skills ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-}
-
-.skills ul li {
-    background: #eee;
-    padding: 8px;
-    margin: 5px;
-    display: inline-block;
-    border-radius: 5px;
+    list-style-type: disc;
+    margin-left: 20px;
 }
 
 /* Footer */
 footer {
-    background: #333;
+    background: black;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     margin-top: 20px;
 }
 
-/* Responsif untuk layar kecil */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
+footer form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
 
-    .profile-img {
-        width: 120px;
-        height: 120px;
-    }
+footer input, footer textarea {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
 
-    .identity h2 {
-        font-size: 18px;
-    }
+footer button {
+    background: white;
+    color: black;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
