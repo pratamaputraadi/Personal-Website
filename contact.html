@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+
+<!-- HEADER -->
+<header>
     <div class="welcome-text">Selamat Datang</div>
     <nav>
         <ul class="nav-links">
@@ -20,73 +22,53 @@
     <div class="hamburger" onclick="toggleMenu()">☰</div>
 </header>
 
-    <!-- KONTEN UTAMA -->
-    <main class="container">
-        <!-- Foto & Identitas -->
-        <section class="profile">
-            <img src="Picture.png" alt="Foto Profil" class="profile-img">
-            <div class="identity">
-                <h2>Adi Pratama Putra</h2>
-                <p>4B Informatika - Fakultas Ilmu Komputer</p>
-                <p>Universitas Singaperbangsa Karawang</p>
-            </div>
-        </section>
+<!-- KONTEN UTAMA -->
+<main class="container">
 
-        <!-- Tinggalkan Pesan -->
-        <div class="Tinggalkan Pesan">
-            <h2>Tinggalkan Pesan</h2>
-            <form id="contact-form">
-                <input type="text" id="name" placeholder="Nama" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="text" id="subject" placeholder="Subjek" required>
-                <textarea id="message" placeholder="Pesan" required></textarea>
-                <button type="submit">Kirim</button>
-            </form>
+    <!-- Profil -->
+    <section class="profile">
+        <img src="Picture.png" alt="Foto Profil" class="profile-img">
+        <div class="identity">
+            <h2>Adi Pratama Putra</h2>
+            <p>4B Informatika - Fakultas Ilmu Komputer</p>
+            <p>Universitas Singaperbangsa Karawang</p>
         </div>
     </section>
-    </main>
-    
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 Adi Pratama Putra. All Rights Reserved.</p>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Nama" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="text" id="subject" placeholder="Subjek" required>
-            <textarea id="message" placeholder="Pesan" required></textarea>
+
+    <!-- Formulir Tinggalkan Pesan -->
+    <section class="contact-form">
+        <h2>Tinggalkan Pesan</h2>
+        <form id="contact-form-main">
+            <input type="text" id="name-main" placeholder="Nama" required>
+            <input type="email" id="email-main" placeholder="Email" required>
+            <input type="text" id="subject-main" placeholder="Subjek" required>
+            <textarea id="message-main" placeholder="Pesan" required></textarea>
             <button type="submit">Kirim</button>
         </form>
-    </footer>
+    </section>
 
-    <script>
-    function toggleMenu() {
-        const nav = document.querySelector('.nav-links');
-        nav.classList.toggle('active');
-    }
-    </script>
+</main>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function(){
-            emailjs.init("4MFU6l7zftX1Ittkx"); // Ganti dengan Public Key EmailJS
-        })();
-    
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-    
-            emailjs.send("service_h6ii0rg", "template_xe8v18d", { // Ganti dengan ID yang benar
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                subject: document.getElementById("subject").value,
-                message: document.getElementById("message").value
-            })
-            .then(function(response) {
-                alert("Pesan berhasil dikirim!");
-            }, function(error) {
-                alert("Gagal mengirim pesan. Error: " + error.text);
-            });
-        });
-    </script>
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Adi Pratama Putra. All Rights Reserved.</p>
+    <form id="contact-form">
+        <input type="text" id="name" placeholder="Nama" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="subject" placeholder="Subjek" required>
+        <textarea id="message" placeholder="Pesan" required></textarea>
+        <button type="submit">Kirim</button>
+    </form>
+</footer>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+<script src="htts://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function(){
+        emailjs.init("4MFU6l7zftX1Ittkx");
+    })();
+</script>
 
 </body>
 </html>
