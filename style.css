@@ -1,26 +1,32 @@
+/* Reset dasar */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
+/* Header */
 header {
     background: #333;
     color: white;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
 }
 
 .welcome-text {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
+/* Navigasi */
 nav ul {
     list-style: none;
     display: flex;
@@ -40,10 +46,22 @@ nav ul li a {
     border-radius: 5px;
 }
 
-.container {
-    padding: 20px;
+nav ul li a:hover {
+    background: #777;
 }
 
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile */
 .profile {
     text-align: center;
     margin-bottom: 20px;
@@ -57,14 +75,13 @@ nav ul li a {
 
 .identity h2 {
     font-size: 22px;
+    margin-top: 10px;
 }
 
-.skills ul, .experience p {
-    text-align: center;
-}
-
+/* Skills */
 .skills ul {
     list-style: none;
+    text-align: center;
     padding: 0;
 }
 
@@ -76,44 +93,27 @@ nav ul li a {
     border-radius: 5px;
 }
 
+/* Footer */
 footer {
     background: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     margin-top: 20px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-form input, form textarea {
-    width: 90%;
-    max-width: 400px;
-    margin: 5px 0;
-    padding: 8px;
-}
-
-button {
-    background: #555;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
-
+/* Responsif untuk layar kecil */
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
         align-items: center;
     }
+
     .profile-img {
         width: 120px;
         height: 120px;
     }
+
     .identity h2 {
         font-size: 18px;
     }
