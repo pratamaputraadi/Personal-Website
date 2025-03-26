@@ -39,10 +39,10 @@
     <section class="contact-form">
         <h2>Tinggalkan Pesan</h2>
         <form id="contact-form-main">  <!-- Sesuai dengan ID di JS -->
-            <input type="text" id="name-main" placeholder="Nama" required>
-            <input type="email" id="email-main" placeholder="Email" required>
-            <input type="text" id="subject-main" placeholder="Subjek" required>
-            <textarea id="message-main" placeholder="Pesan" required></textarea>
+            <input type="text" id="name" placeholder="Nama" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="subject" placeholder="Subjek" required>
+            <textarea id="message" placeholder="Pesan" required></textarea>
             <button type="submit">Kirim</button>
         </form>
     </section>
@@ -55,30 +55,30 @@
         const nav = document.querySelector('.nav-links');
         nav.classList.toggle('active');
     }
-</script>
+    </script>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-    (function(){
-        emailjs.init("4MFU6l7zftX1Ittkx"); // Ganti dengan Public Key EmailJS
-    })();
-
-    document.getElementById("contact-form-main").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        emailjs.send("service_h6ii0rg", "template_xe8v18d", { // Ganti dengan ID yang benar
-            name: document.getElementById("name-main").value,   // Sesuai dengan input di contact.html
-            email: document.getElementById("email-main").value,
-            subject: document.getElementById("subject-main").value,
-            message: document.getElementById("message-main").value
-        })
-        .then(function(response) {
-            alert("Pesan berhasil dikirim!");
-        }, function(error) {
-            alert("Gagal mengirim pesan. Error: " + error.text);
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("4MFU6l7zftX1Ittkx"); // Ganti dengan Public Key EmailJS
+        })();
+    
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            emailjs.send("service_h6ii0rg", "template_xe8v18d", { // Ganti dengan ID yang benar
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value
+            })
+            .then(function(response) {
+                alert("Pesan berhasil dikirim!");
+            }, function(error) {
+                alert("Gagal mengirim pesan. Error: " + error.text);
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 </html>
