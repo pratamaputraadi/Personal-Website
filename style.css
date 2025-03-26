@@ -157,3 +157,43 @@ footer button {
         width: 90%;
     }
 }
+
+/* Box untuk Form Tinggalkan Pesan */
+.contact-form {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Form di dalam Box */
+#contact-form-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#contact-form-main input,
+#contact-form-main textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Tombol Kirim */
+#contact-form-main button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#contact-form-main button:hover {
+    background: #333;
+}
