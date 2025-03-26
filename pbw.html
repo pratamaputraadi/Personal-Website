@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBW</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="welcome-text">Pemrograman Berbasis Web</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="pbw.html">PBW</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="container">
+        <!-- Foto & Identitas -->
+        <section class="profile">
+            <img src="Picture.png" alt="Foto Profil" class="profile-img">
+            <div class="identity">
+                <h2>Adi Pratama Putra</h2>
+                <p>4B Informatika - Fakultas Ilmu Komputer</p>
+                <p>Universitas Singaperbangsa Karawang</p>
+            </div>
+        </section>
+
+        <!-- Pemrograman Berbasis Web -->
+        <section class="PBW">
+            <h2>Pemrograman Berbasis Web</h2>
+            <p>
+                Pemrograman berbasis web adalah proses pengembangan perangkat lunak yang berjalan melalui browser dengan menggunakan teknologi internet. Dalam pemrograman ini, pengembang menggunakan berbagai bahasa pemrograman seperti HTML, CSS, dan JavaScript untuk membangun tampilan antarmuka, serta bahasa server-side seperti PHP, Python, atau Node.js untuk menangani proses bisnis dan logika aplikasi. Dengan pemrograman berbasis web, pengguna dapat mengakses aplikasi melalui jaringan internet tanpa perlu menginstal perangkat lunak tambahan di komputer mereka.
+            </p>
+            <p>
+                Keunggulan utama dari pemrograman berbasis web adalah fleksibilitas dan aksesibilitasnya. Karena aplikasi web dapat diakses dari berbagai perangkat, baik itu komputer, tablet, maupun smartphone, pengguna tidak terbatas pada satu sistem operasi atau perangkat tertentu. Selain itu, pengelolaan dan pembaruan aplikasi menjadi lebih mudah karena semua perubahan dapat dilakukan di server, sehingga pengguna selalu mendapatkan versi terbaru tanpa perlu memperbarui aplikasi secara manual.
+            </p>
+            <p>
+                Dalam pengembangannya, pemrograman berbasis web juga melibatkan berbagai teknologi dan framework untuk meningkatkan efisiensi dan keamanan. Misalnya, framework seperti React, Angular, dan Vue.js digunakan untuk membangun tampilan yang dinamis dan interaktif, sementara Laravel, Django, dan Express.js membantu dalam pengelolaan backend. Keamanan juga menjadi perhatian utama dalam pemrograman berbasis web, sehingga pengembang harus menerapkan teknik seperti enkripsi data, otentikasi pengguna, dan perlindungan terhadap serangan siber untuk memastikan aplikasi tetap aman digunakan.
+            </p>
+        </section>
+
+        <!-- Materi -->
+        <section class="minat">
+            <h2>Materi</h2>
+            <ul>
+                <li><a href="https://drive.google.com/file/d/1NmYvecPcLVi-r_zVf8StvY-ODfQJZiA_/view?usp=sharing" target="_blank">Introduction</a></li>
+                <li><a href="https://drive.google.com/file/d/17kJ2E9_hMVUslnD3vOQhwOC9k7Ye5nLT/view?usp=sharing" target="_blank">HTML</a></li>
+                <li><a href="https://drive.google.com/file/d/15vtgL4RlpGk_l6_01roREUzusKBvrQNk/view?usp=sharing" target="_blank">Aplikasi Web</a></li>
+                <li><a href="https://drive.google.com/file/d/1IXUugsTc7wBskvkm4eFrpPyuaHVLlB8y/view?usp=sharing" target="_blank">PHP</a></li>
+                <li><a href="https://drive.google.com/file/d/1JvxkSjJpajMoNNtgJ8XjDZeY0I1NptSq/view?usp=sharing" target="_blank">Alur Program</a></li>
+                <li><a href="https://drive.google.com/file/d/13ijJAgrGqaazAwFWBP_zgqS3yR8zlmmR/view?usp=sharing" target="_blank">Perulangan</a></li>
+                <li><a href="https://drive.google.com/file/d/1p-vv_ogjfvqcTyklVle4oPb5fmpq2coR/view?usp=sharing" target="_blank">Array</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Adi Pratama Putra. All Rights Reserved.</p>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Nama" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="subject" placeholder="Subjek" required>
+            <textarea id="message" placeholder="Pesan" required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function(){
+        emailjs.init("4MFU6l7zftX1Ittkx");
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        emailjs.send("service_xxxxx", "template_abc123", {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        })
+        .then(function(response) {
+            alert("Pesan berhasil dikirim!");
+        }, function(error) {
+            alert("Gagal mengirim pesan. Error: " + error.text);
+        });
+    });
+</script>
+
+
+</body>
+</html>

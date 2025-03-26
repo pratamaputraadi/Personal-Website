@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="welcome-text">Contact</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="pbw.html">PBW</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="container">
+        <!-- Foto & Identitas -->
+        <section class="profile">
+            <img src="Picture.png" alt="Foto Profil" class="profile-img">
+            <div class="identity">
+                <h2>Adi Pratama Putra</h2>
+                <p>4B Informatika - Fakultas Ilmu Komputer</p>
+                <p>Universitas Singaperbangsa Karawang</p>
+            </div>
+        </section>
+            
+        <!-- Informasi Kontak -->
+            <div class="Kontak Info">
+                <h2>Informasi Kontak</h2>
+                <p>Facebook: <a href="https://www.facebook.com/share/198bY9mFkv/" target="_blank">Adi Pratama Putra</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/Teaema.Tama/" target="_blank">Teaema.Tama</a></p>
+                <p>Email: <a href="mailto:adiprtamap240@gmail.com">adiprtamap240@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Adi Pratama Putra. All Rights Reserved.</p>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Nama" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="subject" placeholder="Subjek" required>
+            <textarea id="message" placeholder="Pesan" required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function(){
+        emailjs.init("4MFU6l7zftX1Ittkx"); // Ganti dengan Public Key dari EmailJS
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        emailjs.send("service_xxxxx", "template_abc123", {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        })
+        .then(function(response) {
+            alert("Pesan berhasil dikirim!");
+        }, function(error) {
+            alert("Gagal mengirim pesan. Error: " + error.text);
+        });
+    });
+</script>
+
+</body>
+</html>
